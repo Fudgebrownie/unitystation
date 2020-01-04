@@ -1,0 +1,24 @@
+# Project Information
+site_name: UnityStation
+site_description: 'Project Design and Documentation for development'
+site_author: 'MrMepper'
+site_url: 'https://mrmanicotti.github.io/unitystation/'
+
+# Repository
+repo_name: 'mrmanicotti/unitystation'
+repo_url: 'https://github.com/mrmanicotti/unitystation/'
+
+theme:
+  name: 'material'
+  feature:
+    tabs: true
+  language: 'en'
+  favicon: 'assets/images/favicon.ico'
+  logo: 'assets/images/logo.png'
+    
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
