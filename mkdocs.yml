@@ -1,0 +1,27 @@
+site_name: UnityStation
+nav:
+    - Home: index.md
+    - Contribution Guides:
+        - Building And Testing: contribution-guides/Building-And-Testing.md
+        - Developing On Linux: contribution-guides/Developing-for-UnityStation-on-Unix-Systems-with-the-Unity-Editor-and-JetBrains-Rider.md
+        - Development Standards: contribution-guides/Development-Standards-Guide.md
+        - Starting Contribution: contribution-guides/Starting-contribution.md
+    - Development:
+        - Component Development Checklist: Development/Component-Development-Checklist.md
+        - Creating and Using Tile Palettes: Development/Creating-and-Using-Tile-Palettes.md
+        - Directory Structure: Development/Directory-Structure.md
+        - Electricity Development: Development/Electricity-Development.md
+        - Cheatsheet: Development/Helpful-Functions-Cheatsheet.md
+        - Hosting A Server: Development/Hosting-a-Server.md
+        - In-Game Debugger Usage: Development/How-to-use-the-in-game-debugger.md
+        - Implementing Interactions: Development/Implementing-Interactions.md
+        - Inventory System: Development/Inventory-System.md
+        - Item Traits System: Development/Item-Traits-System.md
+        - Mirror Upgrade Notes: Development/Mirror-Upgrade-Customization-Notes.md
+        
+
+markdown_extensions:
+  - attr_list
+theme:
+    name: readthedocs
+    highlightjs: true
