@@ -1,102 +1,21 @@
-# RoadMap
-### Feature Goals
+## Required changes to Outpost Station:
 
-note: goals that are crossed out are goals that have been completed
+* A Captains office will need to be mapped somewhere near the bridge. The nuke disk will need to be created and placed in the office
+* A Captains console will need to be developed so that the Captain can call the shuttle and also make Announcements
+* A HOP office will also need to be mapped somewhere near the bridge and a counter installed that can be accessed by the public (facing a main hallway).
+* A HOP console will need to be created and placed near the counter
+* Cargo will need a counter mapped somewhere on the cargo wall and facing a public hallway. This is so that cargo can accept orders from the station crew.
+* Cargo's shuttle will need to be mapped onto a new matrix so that it can be used with matrix move. A shuttle console will not be mapped to this shuttle. Instead it will operate off a way-point system. 
+* A Cargo ordering console will need to be developed and placed next to the counter
+* Plasma generator machines will need to be developed and placed in engineering
+* Solid plasma items will need to be placed in cargo
+* Pipes and plasma canisters will need to be mapped into any shuttles that are docked at the station
+* A Heads of staff only shuttle needs to be mapped onto a new matrix and placed near the bridge
+* 4 or 5 asteriods will need to be mapped onto their own matrices. These asteriods will be positioned randomly by GameManager at round start
+* Find a place to map a Janitor's closet on the station and place a bucket, mop and trash bags inside.
+* Create a Cloner machine and place it in the medical department
+* Develop and map bruise packs and burn cream and place in medical department
+* Map out the rest of the powernet circuit and place APC's in each room. Doors will automatically assign themselves to an APC, along with light bulbs
+* Red emergency lights will need to be mapped to rooms and hallways and also automatically assigned to APC's (so they know when to go into emergency mode)
+* Remove all the weapons from the NukeOps deathmatch preview and only allow weapons to be stored in security or on the bridge. Cargo can also order weapons
 
-<table>
-  <tbody>
-    <tr>
-      <th>Version</th>
-      <th align="center">Requirements (Coder)</th>
-    </tr>
-    <tr>
-      <td>0.1</td>
-      <td>
-        <ul>
-          <li><del>Basic Health </del></li>
-          <li><del>Basic Combat (Melee + Range) </del></li>
-          <li><del>Death, e.g. respawning </del></li>
-          <li><del>randomized spawn points </del></li>
-          <li><del>Networking, e.g. interpolated movement of players, shooting </del></li>
-          <li><del>exploding fuel tanks </del></li>
-          <li><del>pulling fuel tanks and closets </del></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>0.2</td>
-      <td>
-        <ul>
-          <li><del>basic electricity</del></li>
-          <li>basic building</li>
-          <li><del>menus, e.g. right click menu, machine interaction menu</del></li>
-          <li><del>space walk, incl. death in space</del></li>
-          <li><del>independent local matrices, e.g. one for a station and another one for a spaceship</del></li>
-          <li><del>freely pilotable spaceships</del></li>
-          <li><del>basic auto updating functionality</del></li>
-          <li><del>Basic roles & door rights</del></li>
-        </ul>
-      </td>
-    </tr>
-<tr>
-      <td>0.3</td>
-      <td>
-        <ul>
-          <li><del>Basic Atmospherics, no pipes needed</del></li>
-          <li><del>Account System, e.g. character design, stats, ...</del></li>
-          <li><del>players intentions</del></li>
-          <li><del>Blood, e.g. foot prints, gibbing explosion</del></li>
-          <li><del>Complete chat system</del> dependent on telecomms</li>
-          <li><del>Redesign FOV</del></li>
-          <li><del>Redesign lighting based on FOV code</del></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>0.4</td>
-      <td>
-        <ul>
-          <li>basic Modding</li>
-          <li>Advanced Round Management, e.g. map rotating, messages</li>
-          <li><del>Basic Admin portal</del></li>
-          <li>Easy server deployment, maybe even automatic</li>
-          <li><del>24 / 7 Server</del></li>
-          <li><del>HUD overhaul, Flexible UI with Docking Tabs system that would supersede right panel</del></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>0.5</td>
-      <td>
-        <ul>
-          <li>Advanced Health System, Hunger, Disease</li>
-          <li><del>Roles, such as Cook, Botanist, Security, Engineer</del></li>
-          <li>Roles specific mechanics, such as botany, cooking etc.</li>
-          <li>Role Management</li>
-          <li>Piping of Atmospherics</li>
-          <li>Disposals</li>
-          <li>...</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td> to be continued... </td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-
-### Long-term Goals
-
-* <del>User change-able keybindings</del>
-* Networking Overhaul
-    * Own Networking Layer
-    * <del>Headless Server shouldn't start as a Player</del>
-* Separation of Responsibility
-    * i.e. Refactoring Project structure
-* <del>Auto updater</del>
-* Editor Tools
-    * Item Creation
-    * <del>Tilemapper / Sectioning</del>
-* Round Record/Replay system
-* To be continued

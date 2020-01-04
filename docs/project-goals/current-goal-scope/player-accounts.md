@@ -1,102 +1,19 @@
-# RoadMap
-### Feature Goals
+## Purpose:
 
-note: goals that are crossed out are goals that have been completed
+ The player accounts system will be used to store character customization settings, player stats and admin data for each player who plays unitystation. It will be an easy process to sign up and will be required to join the closed preview demo of the game. A simple form page will be set up on unitystation.org to sign up each player. For the closed preview release a steam key will be emailed to each new player when they sign up. 
 
-<table>
-  <tbody>
-    <tr>
-      <th>Version</th>
-      <th align="center">Requirements (Coder)</th>
-    </tr>
-    <tr>
-      <td>0.1</td>
-      <td>
-        <ul>
-          <li><del>Basic Health </del></li>
-          <li><del>Basic Combat (Melee + Range) </del></li>
-          <li><del>Death, e.g. respawning </del></li>
-          <li><del>randomized spawn points </del></li>
-          <li><del>Networking, e.g. interpolated movement of players, shooting </del></li>
-          <li><del>exploding fuel tanks </del></li>
-          <li><del>pulling fuel tanks and closets </del></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>0.2</td>
-      <td>
-        <ul>
-          <li><del>basic electricity</del></li>
-          <li>basic building</li>
-          <li><del>menus, e.g. right click menu, machine interaction menu</del></li>
-          <li><del>space walk, incl. death in space</del></li>
-          <li><del>independent local matrices, e.g. one for a station and another one for a spaceship</del></li>
-          <li><del>freely pilotable spaceships</del></li>
-          <li><del>basic auto updating functionality</del></li>
-          <li><del>Basic roles & door rights</del></li>
-        </ul>
-      </td>
-    </tr>
-<tr>
-      <td>0.3</td>
-      <td>
-        <ul>
-          <li><del>Basic Atmospherics, no pipes needed</del></li>
-          <li><del>Account System, e.g. character design, stats, ...</del></li>
-          <li><del>players intentions</del></li>
-          <li><del>Blood, e.g. foot prints, gibbing explosion</del></li>
-          <li><del>Complete chat system</del> dependent on telecomms</li>
-          <li><del>Redesign FOV</del></li>
-          <li><del>Redesign lighting based on FOV code</del></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>0.4</td>
-      <td>
-        <ul>
-          <li>basic Modding</li>
-          <li>Advanced Round Management, e.g. map rotating, messages</li>
-          <li><del>Basic Admin portal</del></li>
-          <li>Easy server deployment, maybe even automatic</li>
-          <li><del>24 / 7 Server</del></li>
-          <li><del>HUD overhaul, Flexible UI with Docking Tabs system that would supersede right panel</del></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>0.5</td>
-      <td>
-        <ul>
-          <li>Advanced Health System, Hunger, Disease</li>
-          <li><del>Roles, such as Cook, Botanist, Security, Engineer</del></li>
-          <li>Roles specific mechanics, such as botany, cooking etc.</li>
-          <li>Role Management</li>
-          <li>Piping of Atmospherics</li>
-          <li>Disposals</li>
-          <li>...</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td> to be continued... </td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+Changes to the Player Login GUI will need to be made to accept a password with an option to remember settings. Once the player logs in they will then move to a server list page to select the server they want to join (will just be the one server for a long time). Server count and stats will be retrieved via our api.
 
-### Long-term Goals
+Selecting a server while it is waiting to start will take the player to a Server Lobby screen with the ability to chat to people while they wait for the server to start. Servers automatically start when there is more then 1 player in the lobby and a 2 minute timer has finished counting down. If the lobby player count goes back to 0 before the timer has finished counting down then the timer is reset back to the full 2 minute wait time. More on the new lobby screen later.
 
-* <del>User change-able keybindings</del>
-* Networking Overhaul
-    * Own Networking Layer
-    * <del>Headless Server shouldn't start as a Player</del>
-* Separation of Responsibility
-    * i.e. Refactoring Project structure
-* <del>Auto updater</del>
-* Editor Tools
-    * Item Creation
-    * <del>Tilemapper / Sectioning</del>
-* Round Record/Replay system
-* To be continued
+## Backend API:
+While in development mode the server urls will point to our dev.unitystation.org api which will be separated from the release api. The url and pass key fields will be prepopulated with this data in our source code. At release time a new url and pass keys will be loaded via a config file on the build server to make sure db access is secure. All api requests should be hashed to prevent from sniffing. The development database will also have its own tables and db user credentials to ensure that the two services are sufficiently separated.
+
+## Benefits for players:
+
+The player account system will allow players to take their characters to different machines. It also lays the ground work for player stats in the future which we will cover in another scope.
+
+## Benefits for admins:
+
+We can now store IP addresses and Steam Ids to each account and admin notes. This will also be a good place to store account status (Active, Banned, Kicked etc). 
+
