@@ -1,20 +1,9 @@
-- [Spawning and Despawning API](#spawning-and-despawning-api)
-- [Lifecycle](#lifecycle)
-  * [When are lifecycle hooks invoked?](#when-are-lifecycle-hooks-invoked)
-  * [What lifecycle methods should your component implement?](#what-lifecycle-methods-should-your-component-implement)
-  * [Testing / Debugging Object Lifecycle](#testing-debugging-object-lifecycle)
-  * [Examples](#examples)
-
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
-
+# Proper Spawning and Despawning
 This page describes the lifecycle system, which provides ways to easily spawn / despawn arbitrary objects
 and straightforward hooks for invoking logic when those things happen.
 
 
-# Spawning and Despawning API
+## Spawning and Despawning API
 The primary API for spawning stuff is in `Spawn`. Despawning is handled in `Despawn`. You should use these classes whenever you
 want to spawn or despawn anything (with one exception noted below). Refer to the documented methods for
 details.
@@ -23,7 +12,7 @@ As an exception, spawn logic related to anything player-controlled, such as spaw
 respawning, becoming a ghost, repossessing a body, etc...are handled in `PlayerSpawn`.
 
 
-# Lifecycle
+## Lifecycle
 
 Object Lifecycle refers to how objects are created and destroyed. Your component can hook into these events via our **lifecycle interfaces**. Server side spawn / despawn events can be hooked into by
 implementing `IServerSpawn`, `IServerDespawn`, or `IServerLifecycle`. Client side logic can be hooked into via implementing `IClientSpawn`, `IClientDespawn`, or `IClientLifecycle`.
@@ -34,7 +23,7 @@ which necessitate these interfaces: namely **Object Pooling**.
 For all objects, we use a technique called object pooling. Objects are created ahead of time and added to a pool, then simply moved into position in the game when an object of that type needs to be spawned. When a pooled object is despawned, it is simply returned to the pool. This avoids expensive object creation and destruction logic. It is particularly useful for things like bullets or casings, which spawn rapidly. But it creates some complications due to re-using objects which may be in different states from when they were originally despawned. The Unity lifecycle methods are unaware of object pooling, hence the need for our lifecycle interfaces.
 
 
-## When are lifecycle hooks invoked?
+### When are lifecycle hooks invoked?
 
 In addition to the [standard Unity lifecycle](https://docs.unity3d.com/Manual/ExecutionOrder.html)...
 
@@ -50,7 +39,7 @@ Another way of thinking about it:
   * Server - hook gets invoked when the object is first created, regardless of whether it has been mapped
 into the scene or spawned after the scene has loaded.
 
-## What lifecycle methods should your component implement?
+### What lifecycle methods should your component implement?
 
 Remember, due to object pooling **Awake() / Start() is not enough!**. Those methods will only be called when the object is first created. If your
 object is spawned from the pool and doesn't implement our lifecycle hooks, it will be in whatever state it was when it last despawned.
@@ -62,7 +51,7 @@ Given that...
 the lifecycle hook method in order to determine if they should initialize to a "blank slate" state or preserve their mapped configuration.
 1. (If using SyncVars, also see [[SyncVar Best Practices for Easy Networking]].
 
-## Testing / Debugging Object Lifecycle
+### Testing / Debugging Object Lifecycle
 You should test to ensure that your object properly despawns / initializes itself, even when it is pooled.
 
 You can use the Dev Spawner / Destroyer tools to spawn and despawn your object. However, this does not test how the object behaves when it is pooled, as there's no guarantee it is spawned / despawned from the pool.
@@ -78,6 +67,6 @@ You can use a special right click menu command, "Respawn" to simulate despawning
 5. Destroy your object using Dev Destroyer.
 6. Validate that the object properly destroys itself - it no longer affects the game world and there aren't any errors caused by the object being destroyed. If there are any problems, ensure you have implemented necessary destruction logic in `IServerDespawn/IClientDesapwn` hooks in your component.
 
-## Examples
+### Examples
 
 See `ItemStorage`. It implements a mix of server and client side lifecycle interfaces. You can also search through the codebase for usages of the various lifecycle interfaces.

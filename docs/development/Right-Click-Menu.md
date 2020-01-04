@@ -1,15 +1,10 @@
-- [Overview](#overview)
-- [1. Generate Options with IRightClickable](#1-generate-options-with-irightclickable)
-- [2. Use the [RightClickMenu] Attribute](#2-use-the-rightclickmenu-attribute)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
+# Right Click Menu
 
 This page describes how the new right click menu works. The new system uses Scriptable Objects and allows for dynamic changes to an object's right click menu (allows changing what options are presented based on an object's state). It also allows overriding the text, sprite, and background color of the menu items and is designed to be developer friendly and easy to quickly set up.
 
 If you have any issues or akwardness trying to use it, or you want to suggest an improvement, feel free to reach out to @chairbender on Discord or create an Issue.
 
-# Overview
+## Overview
 All possible right click options are defined as ScriptableObjects. These define the appearance of the right click option but do not define what happens when the option is selected. These are all in Resources/ScriptableObjects/Interaction/RightclickOptions.
 
 To ensure consistent ordering, there is also a RightClickOptionOrder ScriptableObject which allows defining the display order of RightClickOptions. You can modify this in the Right click canvas.prefab's Rightclick Manager component.
@@ -20,7 +15,7 @@ By default, an object's top-level right click menu button will use the first spr
 
 There are 2 ways for a component to define right click menu options on its object.
 
-# 1. Generate Options with IRightClickable
+## Generate Options with IRightClickable
 A component can implement IRightClickable to define which options should be shown based on its current state. All that
 is needed is to implement the method.
 
@@ -130,7 +125,7 @@ public class PickUpTrigger : InputTrigger, IRightClickable
 ```
 
 
-# 2. Use the [RightClickMenu] Attribute
+## Use the [RightClickMenu] Attribute
 This should only be used for development, as it can create performance issues if there are lots
 of usages of it. You can put this attribute on any no-arg method of a component and a right click
 menu option will be generated which invokes that method. This can be useful if you have a method

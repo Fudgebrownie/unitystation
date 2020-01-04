@@ -1,6 +1,7 @@
 Since this project aims to reimplement the DM codebases in Unity, it is very useful to know how to navigate through the DM codebases so you can look up important details like specific configuration values or logic.
 
-Here's how to set things up so you can easily navigate a DM project, using tgstation as an example:
+Here's how to set things up so you can easily navigate a DM project, using tgstation as an example:  
+
 1. [Get VSCode](https://code.visualstudio.com/download)
 2. Launch VSCode and go to the extensions menu, find the "BYOND DM Language Support", "EditorConfig for VS Code", and "DreamMaker Language Client" extensions.
 3. Clone or download the DM codebase you want to examine (cloning is recommended so you can pull if there's any updates). For example, for tg, assuming you have git installed, you can call `git clone https://github.com/tgstation/tgstation.git`

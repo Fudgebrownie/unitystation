@@ -7,6 +7,7 @@ site_url: 'https://mrmanicotti.github.io/unitystation/'
 # Repository
 repo_name: 'mrmanicotti/unitystation'
 repo_url: 'https://github.com/mrmanicotti/unitystation/'
+edit_uri: 'edit/develop/docs/'
 
 theme:
   name: 'material'

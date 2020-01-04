@@ -33,7 +33,7 @@ Tiles are added to the palettes as they are created. To create a new Tile follow
 
 ### Create a new map
 * TODO: How do you create a new map from a station palette?
-* TODO: How do you add your new map for map selection, other than this: [Testing custom maps in Multiplayer](https://github.com/unitystation/unitystation/wiki/Building-And-Testing#testing-custom-maps-in-multiplayer)?
+* TODO: How do you add your new map for map selection, other than this: [Testing custom maps in Multiplayer](../contribution-guides/Building-And-Testing.md)?
 
 ## Mapping Guidelines
 Objects should never be rotated using the Transform. Their local rotation should always be 0, 0, 0. If you change it, it will either not have any effect or may have unexpected consequences. If there is any need to rotate an object, define its facing, etc...it should be done via Directional or other components.

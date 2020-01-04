@@ -1,7 +1,4 @@
-- [Windows](#windows)
-- [OSX](#osx)
-- [Linux](#linux)
-
+# Simulating Lag
 This page shows how to simulate lag / high ping situations when playing locally or connecting to a remote server. The approach is different depending on your operating system and version, so please refer to the appropriate section for your system. Please update this page if you run into issues and remove "not yet tested" if you found it to work.
 
 It's important to test with lag so that you can ensure the game still operates smoothly when someone doesn't have a great connection to the server. It's one of the key capabilities that helps the new remakes stand out from BYOND.

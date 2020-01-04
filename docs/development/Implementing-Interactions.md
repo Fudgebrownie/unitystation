@@ -1,6 +1,6 @@
 # Implementing Interactions
 
-For info on the Right Click Menu, see [[Right Click Menu]].
+For info on the Right Click Menu, see [Right Click Menu](Right-Click-Menu.md).
 
 This page describes the interaction system for Unitystation, also called Interaction Framework 2 (IF2), due to being a replacement of the previous approach to interactions.
 
@@ -240,7 +240,8 @@ Due to wanting to make guns more usable, there are 2 main different cases - when
 
 Alt click and throw are always checked first and have no special logic.
 
-When the active hand doesn't have a loaded gun:
+When the active hand doesn't have a loaded gun:  
+
 1. Mouse Clicked Down
     1. Is the mouse over an object with a MouseDraggable? We need to wait and see if we should drag it or click on it. 
        Save the MouseDraggable and wait until mouse is dragged or mouse 
@@ -272,7 +273,8 @@ When the active hand doesn't have a loaded gun:
            InputTrigger and stop as soon as one occurs.
 
 
-When there is a loaded gun in the active hand.
+When there is a loaded gun in the active hand.  
+
 1. Mouse Clicked Down
     1. Are we on Harm intent? If so, shoot (trigger IInteractable&lt;AimApply> components on Gun).
     2. If not on Harm intent...
