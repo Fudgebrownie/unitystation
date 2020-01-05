@@ -39,12 +39,14 @@ To create a prefab, you first need to determine the best parent prefab to use. Y
 
 ### Picking the Best Parent Prefab
 
-This is a bit of an art. The goal here is to pick a parent that
+This is a bit of an art. The goal here is to pick a parent that  
+
 1. Has the stuff your prefab needs already, no more and no less.
 2. Logically makes sense as a child, so if the parent's configuration is updated you would want your prefab to gain those updates as well.
 
 
-Tips for how to find the best parent prefab:
+Tips for how to find the best parent prefab:  
+
 1. Try to match the hier structure in the tgstation DM codebase. Each node in the hier string should roughly match up with a node in the prefab variant hierarchy. For example, plasteel tiles have a hier of /obj/item/stack/tile/plasteel, so the best place in the prefab variant hierarchy for this object would be something like Item.prefab > Stackable.prefab > Tile.prefab > Plasteel.prefab.
 1. Find an existing prefab that is similar to what you want to create, then...
    1. Go to the top of the prefab to see its parent. If the parent makes sense for your prefab, you can create your prefab as a variant of the parent or simply duplicate the similar prefab and rename the duplicate.
